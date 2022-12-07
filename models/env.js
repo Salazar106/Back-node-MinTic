@@ -16,4 +16,4 @@ const envSchema = mongoose.Schema({
   estado: { type: String, default: "Por Entregar" },
 });
 
-module.exports = mongoose.model("Env", envSchema);
+module.exports = mongoose.model("Envios", envSchema);

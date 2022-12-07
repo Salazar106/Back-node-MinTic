@@ -5,7 +5,7 @@ const Envios = require("../models/env");
 
 //create order
 
-//!localhost:6000/env/newEnv
+//?localhost:6000/env/newEnv
 router.post("/newEnv", (req, res) => {
   const newEnv = Envios(req.body);
   newEnv
