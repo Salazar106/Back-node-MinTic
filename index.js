@@ -5,6 +5,9 @@ const port=process.env.PORT || 6000
 require('dotenv').config();
 const userRoutes= require('./routes/users')
 const envRoutes=require('./routes/envios')
+const cors=require('cors');
+
+app.use(cors());
 
 //middleware
 app.use(express.json());
