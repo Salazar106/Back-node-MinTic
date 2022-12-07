@@ -4,7 +4,7 @@ const Envios = require("../models/env");
 
 //create order
 
-//localhost:6000/env/newEnv
+//!localhost:6000/env/newEnv
 router.post("/newEnv", (req, res) => {
   const newEnv = Envios(req.body);
   newEnv
@@ -23,7 +23,7 @@ router.get("/allEnvs", (req, res) => {
 });
 
 //?----localhost:6000/env/allEnvs
-router.get("/envByid", (req, res) => {
+router.get("/envByid/:id", (req, res) => {
   const { id } = req.params;
 
   Envios.findById(id).then((envio) => {
@@ -35,11 +35,11 @@ router.get("/envByid", (req, res) => {
   });
 });
 
-//localhost:6000/env/delete/???
+//?----localhost:6000/env/delete/???
 router.delete("/delete/:id", (req, res) => {
-  const { _id } = req.params;
+  const { id } = req.params;
 
-  Envios.findByIdAndDelete(_id).then((env) => {
+  Envios.findByIdAndDelete(id).then((env) => {
     if (env) {
       return res.json({ mensaje: "orden Eliminada Corectamente" });
     } else {
